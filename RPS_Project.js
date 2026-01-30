@@ -64,11 +64,11 @@ function playGame() {
     }
 
     if (humanScore > computerScore) {
-        console.log("🎉 You win the game!");
+        console.log("You win the game!");
     } else if (computerScore > humanScore) {
-        console.log("💻 Computer wins the game!");
+        console.log("Computer wins the game!");
     } else {
-        console.log("🤝 The game is a tie!");
+        console.log("The game is a tie!");
     }
 }
 
