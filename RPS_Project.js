@@ -3,12 +3,11 @@ function getComputerChoice() {
     const randomIndex = Math.floor(Math.random() * choices.length);
     return choices[randomIndex];
 }
-console.log(getComputerChoice());
 
 function getHumanChoice() {
     let userInput = prompt("Enter rock, paper, or scissors:");
      if (userInput === null) {
-        alert("Input cannot be null. Please enter rock, paper, or scissors.");
+        console.log("Game cancelled.");
         return null; 
     }
     userInput = userInput.toLowerCase();
@@ -42,6 +41,9 @@ function game() {
     computerScore = 0;
     for (let round = 0; round < 5; round++) {
         const humanChoice = getHumanChoice();
+        if (humanChoice === null) {
+            return; 
+        }
         const computerChoice = getComputerChoice();
         console.log(playRound(humanChoice, computerChoice));
         console.log(`Score - You: ${humanScore}, Computer: ${computerScore}`);
